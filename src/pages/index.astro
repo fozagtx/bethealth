@@ -1,0 +1,102 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="BetaHealth: Turn lab reports into action">
+  <div class="min-h-screen flex flex-col">
+    <!-- Brand -->
+    <div class="px-6 pt-6">
+      <div class="max-w-5xl mx-auto flex items-center gap-2.5">
+        <svg viewBox="0 0 32 32" fill="none" class="w-7 h-7" aria-hidden="true">
+          <path d="M27 16A11 11 0 1 1 16 5" stroke="#0D9488" stroke-width="3.6" stroke-linecap="round"></path>
+          <path d="M16 11.8L20 18.6H12Z" fill="#0D9488" stroke="#0D9488" stroke-width="1.6" stroke-linejoin="round"></path>
+        </svg>
+        <span class="font-heading font-semibold text-lg">BetaHealth</span>
+      </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="flex-1 flex items-center justify-center px-6 py-14">
+      <div class="max-w-3xl mx-auto text-center">
+        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-accent-light text-accent-dark text-sm font-medium mb-8">
+          <span>◉</span>
+          <span>Your health data, finally useful</span>
+        </div>
+        <h1 class="text-5xl md:text-6xl font-heading font-bold tracking-tight mb-6 text-balance">
+          Stop throwing away your lab reports
+        </h1>
+        <p class="text-xl text-ink-muted mb-10 text-balance">
+          BetaHealth turns your lab reports into a score, a plan, and progress you can track. Bring data to your next doctor visit, not confusion.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="/app" class="btn-primary text-lg px-8 py-4">
+            Get started
+          </a>
+          <a href="#how-it-works" class="btn-secondary text-lg px-8 py-4">
+            How it works
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how-it-works" class="px-6 py-20 bg-surface-card border-y border-border">
+      <div class="max-w-5xl mx-auto">
+        <h2 class="text-3xl font-heading font-semibold text-center mb-16">How it works</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-accent-light rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <span class="text-3xl">📄</span>
+            </div>
+            <h3 class="text-xl font-heading font-semibold mb-2">Upload your report</h3>
+            <p class="text-ink-muted">Drop in a PDF or photo. We extract the values, you confirm every number.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-accent-light rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <span class="text-3xl">◉</span>
+            </div>
+            <h3 class="text-xl font-heading font-semibold mb-2">Get your score</h3>
+            <p class="text-ink-muted">See your health score with a breakdown of each metric and why it matters.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-accent-light rounded-2xl flex items-center justify-center mx-auto mb-4">
+              <span class="text-3xl">✓</span>
+            </div>
+            <h3 class="text-xl font-heading font-semibold mb-2">Follow your plan</h3>
+            <p class="text-ink-muted">Daily tasks tied to your out-of-range metrics. Track progress, earn streaks.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="px-6 py-20">
+      <div class="max-w-3xl mx-auto">
+        <h2 class="text-3xl font-heading font-semibold text-center mb-12">Questions</h2>
+        <div class="space-y-6">
+          <div class="card">
+            <h3 class="font-heading font-semibold mb-2">Is this medical advice?</h3>
+            <p class="text-ink-muted">No. BetaHealth helps you prepare for your doctor, never replace them. Every screen carries a visible disclaimer.</p>
+          </div>
+          <div class="card">
+            <h3 class="font-heading font-semibold mb-2">Where is my data stored?</h3>
+            <p class="text-ink-muted">On your device. We use IndexedDB for local storage. Your report file is sent for extraction but never stored on our servers, and extraction returns only the tracked lab values and report date. Names and IDs are never extracted. You can also redact them before uploading.</p>
+          </div>
+          <div class="card">
+            <h3 class="font-heading font-semibold mb-2">Do I need to create an account?</h3>
+            <p class="text-ink-muted">No. No accounts, no emails, no tracking. Just open the app and start.</p>
+          </div>
+          <div class="card">
+            <h3 class="font-heading font-semibold mb-2">How is the health score calculated?</h3>
+            <p class="text-ink-muted">Deterministic scoring from clinical reference ranges (AHA, ADA, NCEP, WHO). No AI involved in scoring, only in extraction and explanations.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="px-6 py-8 border-t border-border text-center text-sm text-ink-faint">
+      <p>BetaHealth. Not medical advice. Prepare for your doctor, never replace your doctor.</p>
+    </footer>
+  </div>
+</BaseLayout>

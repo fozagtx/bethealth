@@ -1,0 +1,29 @@
+---
+import '@/styles/global.css';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Turn your lab reports into a health score, a plan, and progress.' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <title>{title}</title>
+  </head>
+  <body class="min-h-screen bg-surface text-ink antialiased">
+    <slot />
+    <div class="fixed bottom-3 left-1/2 -translate-x-1/2 z-50 print:hidden">
+      <p class="disclaimer bg-surface-card/90 backdrop-blur px-3 py-1 rounded-full border border-border">
+        Not medical advice. Prepare for your doctor, never replace your doctor.
+      </p>
+    </div>
+  </body>
+</html>
