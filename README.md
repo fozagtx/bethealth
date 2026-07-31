@@ -112,6 +112,8 @@ npm run dev
 
 The app runs fully without the key; extraction reports itself unconfigured and manual entry takes over.
 
+`GEMINI_API_KEY` is just Google AI Studio's name for its API key, which serves Gemma models too. The only model this app calls with it is Gemma 4 (`gemma-4-31b-it`), pinned in [`src/pages/api/extract.ts`](src/pages/api/extract.ts).
+
 ## Stack
 
 Astro 5 · React islands · Tailwind · IndexedDB ([`idb`](https://www.npmjs.com/package/idb)) · Gemma 4 via the Google AI Studio API · deployed on Vercel
