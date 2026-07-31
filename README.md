@@ -102,7 +102,7 @@ sequenceDiagram
 - Only the tracked lab values and the report date come back from extraction
 - Users can redact names and IDs before uploading; extraction only needs the numbers
 
-## Getting started
+## Run locally
 
 ```bash
 npm install
@@ -111,8 +111,6 @@ npm run dev
 ```
 
 The app runs fully without the key; extraction reports itself unconfigured and manual entry takes over.
-
-Then open the printed local URL and drop in the [sample report](https://bethealth.vercel.app/sample-report.pdf) (synthetic, generated for demos).
 
 ## Stack
 
