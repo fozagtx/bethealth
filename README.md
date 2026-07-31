@@ -10,7 +10,7 @@
 
 [![BetaHealth dashboard](docs/dashboard.png)](https://youtu.be/RSGs1wKQjAs?si=dpq0r6ZkbgKyvPCA)
 
-*Click the screenshot to watch the 60-second demo.*
+*Click the screenshot to watch the demo.*
 
 </div>
 
@@ -21,13 +21,13 @@ People come home with lab reports, glance at them once, and throw them away. The
 
 ## Features
 
-- **Drop in a lab report** (PDF or photo) — Gemma 4 extracts the values, and you confirm every number in an editable table before anything is saved
+- **Drop in a lab report** (PDF or photo): Gemma 4 extracts the values, and you confirm every number in an editable table before anything is saved
 - **Health Score** computed from clinical reference ranges (AHA, ADA, NCEP, WHO), with a per-metric breakdown and a "why this score" explanation
-- **Daily plan** — tasks and foods, each tied to a specific out-of-range metric with its reason shown
-- **Streaks, points, and badges** — always recomputed from saved history, so they cannot drift or be gamed
-- **Progress over time** — re-test, add the new report, watch the score move
-- **Doctor summary** — a one-page export with metric trends, score history, tasks completed, and your notes
-- **Local-first** — all health data lives in IndexedDB on the device; no accounts, no tracking
+- **Daily plan**: tasks and foods, each tied to a specific out-of-range metric with its reason shown
+- **Streaks, points, and badges**: always recomputed from saved history, so they cannot drift or be gamed
+- **Progress over time**: re-test, add the new report, watch the score move
+- **Doctor summary**: a one-page export with metric trends, score history, tasks completed, and your notes
+- **Local-first**: all health data lives in IndexedDB on the device. No accounts, no tracking
 
 ## How it works
 
@@ -66,7 +66,7 @@ Gemma 4 (`gemma-4-31b-it`, Google AI Studio API) does exactly one job: reading t
 
 - The report file goes to a stateless endpoint ([`src/pages/api/extract.ts`](src/pages/api/extract.ts)), is forwarded to Gemma, and is never stored or logged
 - Gemma does not support constrained JSON output, so the endpoint enforces the shape by prompt and, when Gemma answers in prose, runs a second Gemma pass that converts its own notes into the required JSON
-- Responses are filtered to 16 known metric keys, so names, patient IDs, and other identity data can never come back — the prompt also forbids extracting them
+- Responses are filtered to 16 known metric keys, so names, patient IDs, and other identity data can never come back. The prompt also forbids extracting them
 - The Health Score is never LLM-generated; scoring bands and weights live in one policy file, [`src/lib/scoring.ts`](src/lib/scoring.ts)
 - Extraction failures show their specific reason and fall back to manual entry, which uses the same confirm table
 
@@ -82,30 +82,25 @@ sequenceDiagram
     C->>API: multipart file (PDF or image)
     API->>API: validate type + size, base64 encode in memory
     Note over API,G: One attempt = two passes. The whole attempt is retried once on failure.
-    API->>G: Pass 1 — file + prompt: extract only listed metrics,<br/>exact unit-conversion factors, never guess,<br/>never include identity data, raw JSON only
+    API->>G: Pass 1, file + prompt: extract only listed metrics,<br/>exact unit-conversion factors, never guess,<br/>never include identity data, raw JSON only
     G-->>API: text (often reasoning prose around the JSON)
     API->>API: brace-depth walk finds every balanced JSON object,<br/>keeps the one with the richest values array
     alt no usable JSON from pass 1
-        API->>G: Pass 2 repair — convert your own notes to the JSON shape,<br/>map synonyms to allowed keys
+        API->>G: Pass 2 repair: convert your own notes to the JSON shape,<br/>map synonyms to allowed keys
         G-->>API: JSON text
     end
     API->>API: whitelist filter: known metric keys,<br/>finite numbers, valid date
     API-->>C: values + report date, or an actionable error
-    C->>C: user confirms or edits every value —<br/>nothing is saved until confirmed
+    C->>C: user confirms or edits every value,<br/>nothing is saved until confirmed
 ```
 
 </details>
 
 ## Privacy
 
-- Local-first: all health data lives in IndexedDB on the device — no accounts, no tracking
+- Local-first: all health data lives in IndexedDB on the device. No accounts, no tracking
 - Only the tracked lab values and the report date come back from extraction
 - Users can redact names and IDs before uploading; extraction only needs the numbers
-
-## Prerequisites
-
-- Node.js 18+
-- A [Google AI Studio](https://aistudio.google.com/) API key (optional — the app runs fully without it, and manual entry takes over)
 
 ## Getting started
 
@@ -114,6 +109,8 @@ npm install
 echo "GEMINI_API_KEY=your_google_ai_studio_key" > .env
 npm run dev
 ```
+
+The app runs fully without the key; extraction reports itself unconfigured and manual entry takes over.
 
 Then open the printed local URL and drop in the [sample report](https://bethealth.vercel.app/sample-report.pdf) (synthetic, generated for demos).
 
