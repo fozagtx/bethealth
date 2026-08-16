@@ -1,0 +1,86 @@
+/* BetaHealth global styles — clinical calm, light mode default */
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply bg-surface text-ink font-body;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+
+  h1 {
+    @apply text-4xl font-bold tracking-tight;
+  }
+
+  h2 {
+    @apply text-3xl font-semibold tracking-tight;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold;
+  }
+
+  h4 {
+    @apply text-xl font-medium;
+  }
+}
+
+@layer components {
+  .card {
+    @apply bg-surface-card border border-border rounded-xl p-6 shadow-card transition-shadow hover:shadow-card-hover;
+  }
+
+  .btn-primary {
+    @apply bg-accent text-white px-6 py-3 rounded-lg font-medium transition-colors hover:bg-accent-dark;
+  }
+
+  .btn-secondary {
+    @apply bg-surface border border-border text-ink px-6 py-3 rounded-lg font-medium transition-colors hover:border-border-hover;
+  }
+
+  .metric-chip {
+    @apply inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-sm font-medium;
+  }
+
+  .metric-optimal {
+    @apply bg-accent-light text-accent-dark;
+  }
+
+  .metric-borderline {
+    @apply bg-amber-50 text-amber-700;
+  }
+
+  .metric-high {
+    @apply bg-red-50 text-red-700;
+  }
+
+  .big-number {
+    @apply text-5xl font-heading font-bold tracking-tight;
+  }
+
+  .disclaimer {
+    @apply text-xs text-ink-faint italic;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@media print {
+  @page {
+    margin: 1.2cm;
+  }
+
+  body {
+    background: #ffffff;
+  }
+}

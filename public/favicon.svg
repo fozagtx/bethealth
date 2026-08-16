@@ -1,0 +1,6 @@
+<!-- BetaHealth -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="7" fill="#0D9488"/>
+  <path d="M25.5 16A9.5 9.5 0 1 1 16 6.5" stroke="#FFFFFF" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+  <path d="M16 12.2L19.6 18.4H12.4Z" fill="#FFFFFF"/>
+</svg>

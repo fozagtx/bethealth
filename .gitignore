@@ -1,0 +1,10 @@
+# BetaHealth
+.vercel
+node_modules/
+dist/
+.astro/
+.playwright-mcp/
+
+# secrets — never commit
+.env
+.env.*
