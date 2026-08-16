@@ -1,4 +1,4 @@
-/** BetaHealth — db helpers (local-first). */
+/** BetaHealth — db helpers. */
 import { openDB, type IDBPDatabase } from 'idb';
 import type { UserState, Report, HealthScore, DailyPlan, Streak, Points, Badge, WeeklyChallenge } from '@/types';
 

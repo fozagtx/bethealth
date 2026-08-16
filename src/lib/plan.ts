@@ -1,4 +1,4 @@
-/** BetaHealth — plan helpers (local-first). */
+/** BetaHealth — plan helpers. */
 import type { MetricKey, Task, DailyPlan } from '@/types';
 import { getMetricDef, getTargetString } from '@/lib/scoring';
 

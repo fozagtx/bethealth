@@ -1,4 +1,4 @@
-/** BetaHealth — dates helpers (local-first). */
+/** BetaHealth — dates helpers. */
 // Local-date helpers. All app dates are local calendar dates (YYYY-MM-DD),
 // never UTC slices of toISOString(), so a report added at 11pm counts for today.
 

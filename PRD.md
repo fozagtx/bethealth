@@ -1,6 +1,10 @@
 # BetaHealth
 
+Built for **CS Girlies Annual Hackathon — Technology For Wellness** (Devpost). Main track: **Health**. Bonus: **Best Use of AI**.
+
 Most people come home with lab reports, glance at them once, and file them away forever. The data never becomes action, and by the next appointment nobody remembers what changed. BetaHealth turns a discarded report into a score, a plan, and a progress log you bring back to your doctor.
+
+AI: **Gemma 4 (`gemma-4-31b-it`) via Google AI Studio**. Extraction only; scoring and plans are deterministic code.
 
 Posture: prepare for your doctor, never replace your doctor. A visible "not medical advice" line lives in the app shell and on the doctor summary.
 
@@ -9,10 +13,10 @@ Posture: prepare for your doctor, never replace your doctor. A visible "not medi
 | Decision | Choice |
 |----------|--------|
 | Report input | Upload PDF/photo, AI extracts values, user confirms every value before save (editable confirm table doubles as manual entry) |
-| Data | Local-first, no accounts. IndexedDB on device. Only the report file touches the server, for extraction, and is not stored |
+| Data | IndexedDB in the browser, no accounts. Only the report file is sent to Google AI Studio for extraction, and is not stored |
 | Gamification | All four layers: streaks + score delta, points/XP, badges, weekly challenges (shipped in that order) |
 | UI | Clinical calm: warm off-white, ink text, one green/teal accent, big quiet numbers, light mode default |
-| Stack | Astro + React islands + Tailwind, Gemma 4 (Google AI Studio API) on an Astro server endpoint for extraction only |
+| Stack | Astro + React islands + Tailwind; Gemma 4 via Google AI Studio on an Astro server endpoint for extraction only |
 
 ## Core loop
 
@@ -65,7 +69,7 @@ One printable page (print CSS, browser PDF): metric table with dates and trends,
 - Extraction is always confirmed by the user before saving. Extraction failure shows the specific reason, never silently guesses.
 - Score only ever computed from saved, user-confirmed values.
 - Empty gamification is empty: no streak until day one is real.
-- "Your data stays on this device" stated in the UI, and it must be true.
+- "Saved reports stay in your browser" stated in the UI, and it must be true (IndexedDB). The report file may be sent once to Google AI Studio for extraction and is not retained.
 
 ## Design system
 

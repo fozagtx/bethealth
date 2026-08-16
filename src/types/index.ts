@@ -1,4 +1,4 @@
-/** BetaHealth — index helpers (local-first). */
+/** BetaHealth — index helpers. */
 // Metric types
 export type MetricKey =
   | 'systolic_bp'

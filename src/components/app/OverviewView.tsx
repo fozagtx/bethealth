@@ -30,8 +30,8 @@ export default function OverviewView({ state, actions, onAddReport, onGoTo }: Pr
         <div className="text-5xl mb-4 text-accent">◉</div>
         <h2 className="text-2xl font-heading font-semibold mb-2">Add your first report</h2>
         <p className="text-ink-muted mb-6 max-w-md mx-auto">
-          Upload a PDF or photo of your lab report. You confirm every extracted value before anything is saved, and
-          your data never leaves this device.
+          Upload a PDF or photo of your lab report. You confirm every extracted value before anything is saved.
+          Saved reports stay in IndexedDB in your browser.
         </p>
         <button onClick={onAddReport} className="btn-primary">
           Upload report

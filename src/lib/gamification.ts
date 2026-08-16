@@ -1,4 +1,4 @@
-/** BetaHealth — gamification helpers (local-first). */
+/** BetaHealth — gamification helpers. */
 import type {
   Streak,
   Points,

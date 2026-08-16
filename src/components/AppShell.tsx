@@ -37,7 +37,7 @@ export default function AppShell({ initialView = 'overview' }: Props) {
             <LogoMark className="w-8 h-8" />
             <h1 className="text-xl font-heading font-semibold">BetaHealth</h1>
           </a>
-          <div className="text-xs text-ink-faint">Your data stays on this device</div>
+          <div className="text-xs text-ink-faint">Saved reports stay in your browser</div>
         </div>
       </header>
 

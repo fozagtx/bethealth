@@ -1,4 +1,4 @@
-/** BetaHealth — scoring helpers (local-first). */
+/** BetaHealth — scoring helpers. */
 import type { MetricDefinition, MetricKey, Band } from '@/types';
 
 export const METRICS: MetricDefinition[] = [

@@ -49,7 +49,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
               <span class="text-3xl">📄</span>
             </div>
             <h3 class="text-xl font-heading font-semibold mb-2">Upload your report</h3>
-            <p class="text-ink-muted">Drop in a PDF or photo. We extract the values, you confirm every number.</p>
+            <p class="text-ink-muted">Drop in a PDF or photo. Gemma 4 via Google AI Studio extracts the values; you confirm every number.</p>
           </div>
           <div class="text-center">
             <div class="w-16 h-16 bg-accent-light rounded-2xl flex items-center justify-center mx-auto mb-4">
@@ -80,7 +80,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
           </div>
           <div class="card">
             <h3 class="font-heading font-semibold mb-2">Where is my data stored?</h3>
-            <p class="text-ink-muted">On your device. We use IndexedDB for local storage. Your report file is sent for extraction but never stored on our servers, and extraction returns only the tracked lab values and report date. Names and IDs are never extracted. You can also redact them before uploading.</p>
+            <p class="text-ink-muted">Saved in IndexedDB in your browser. No accounts. For extraction, the report file is sent once to Gemma 4 via Google AI Studio and is never stored on our servers; only the tracked lab values and report date come back. Names and IDs are never extracted. You can also redact them before uploading.</p>
           </div>
           <div class="card">
             <h3 class="font-heading font-semibold mb-2">Do I need to create an account?</h3>
@@ -88,7 +88,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
           </div>
           <div class="card">
             <h3 class="font-heading font-semibold mb-2">How is the health score calculated?</h3>
-            <p class="text-ink-muted">Deterministic scoring from clinical reference ranges (AHA, ADA, NCEP, WHO). No AI involved in scoring, only in extraction and explanations.</p>
+            <p class="text-ink-muted">Deterministic scoring from clinical reference ranges (AHA, ADA, NCEP, WHO). AI is only used for extraction (Gemma 4 via Google AI Studio), not for the score.</p>
           </div>
         </div>
       </div>

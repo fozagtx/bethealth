@@ -4,7 +4,7 @@ import { METRICS } from '@/lib/scoring';
 
 export const prerender = false;
 
-// The uploaded report is forwarded to Gemma 4 (Google AI Studio API) for
+// The uploaded report is forwarded to Gemma 4 via Google AI Studio for
 // extraction and never written to disk or logged. The user confirms every
 // value client-side before saving. Gemma does not support responseSchema, so
 // JSON output is enforced by prompt and parsed defensively.

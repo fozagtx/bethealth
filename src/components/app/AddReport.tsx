@@ -260,7 +260,7 @@ export default function AddReport({ initialHeight, initialWeight, onSave, onClos
 
             <div className="flex items-center justify-between gap-4">
               <p className="text-xs text-ink-faint">
-                {filledCount} of {METRICS.length} metrics filled. Your data stays on this device.
+                {filledCount} of {METRICS.length} metrics filled. Saved reports stay in your browser.
               </p>
               <div className="flex gap-3">
                 <button onClick={onClose} className="btn-secondary py-2.5 px-5">

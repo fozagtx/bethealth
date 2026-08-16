@@ -189,7 +189,7 @@ export default function DoctorView({ state, actions }: Props) {
 
         <p className="text-xs text-ink-faint italic mt-6 pt-4 border-t border-border">
           Not medical advice. Values entered or confirmed by the patient from lab reports; score derived from standard
-          clinical reference ranges (AHA, ADA, NCEP, WHO). Data stored only on the patient's device.
+          clinical reference ranges (AHA, ADA, NCEP, WHO). Saved data stays in the patient's browser (IndexedDB).
         </p>
       </div>
     </div>
